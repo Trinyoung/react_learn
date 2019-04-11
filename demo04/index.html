@@ -9,6 +9,9 @@
   <body>
     <div id="example"></div>
     <script type="text/babel">
+    // React 允许将代码封装成组件（component），然后像插入普通 HTML 标签一样，在网页中插入这个组件。React.createClass 方法就用于生成一个组件类（）。
+    // 也可以直接定义一个类，直接继承自 React.Componet。所有组件类都必须有自己的 render 方法，用于输出组件。
+    // 另外组件类必须 必须只能包含一个顶层标签，否则会报错。
       class HelloMessage extends React.Component {
         render() {
           return <h1>Hello {this.props.name}</h1>;

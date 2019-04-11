@@ -9,6 +9,11 @@
   <body>
     <div id="example"></div>
     <script type="text/babel">
+    // this.props 对象的属性与组件的属性一一对应，属性值的传入可以通过ReactDOM.render()方法插入组件时，写入。
+    // 但有一个例外的属性，它与this.props属性不对应。它就是this.props.childern
+    // 这里需要注意， this.props.children 的值有三种可能：如果当前组件没有子节点，它就是 undefined ;
+    // 如果有一个子节点，数据类型是 object ；如果有多个子节点，数据类型就是 array 。所以，处理 this.props.children 的时候要小心。
+    // 在组件中不能对组件的属性进行写入的操作。
       class NotesList extends React.Component {
         render() {
           return (
@@ -18,13 +23,14 @@
                   return <li>{child}</li>;
                 })
               }
+              <li>{this.props.name}</li>
             </ol>
           );
         }
       }
 
       ReactDOM.render(
-        <NotesList>
+        <NotesList name = "lqy">
           <span>hello</span>
           <span>world</span>
         </NotesList>,

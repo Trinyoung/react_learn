@@ -8,7 +8,7 @@
   </head>
   <body>
     <div id="example"></div>
-    <script type="text/babel">
+    <!-- <script type="text/babel">
       var names = ['Alice', 'Emily', 'Kate'];
 
       ReactDOM.render(
@@ -20,6 +20,21 @@
         }
         </div>,
         document.getElementById('example')
+      );
+    </script> -->
+    <script type="text/babel">
+      // jsx 语法 ，jsx就是让html 语法在js 中正常的使用的一种表现。其语法规则是遇到html就用<>来表示，遇到js 就用{}包裹。
+      // html标签中可以写入 js 表达式。js中也可以嵌入html语法。
+      var names = ['Alice', 'Emily', 'Kate'];
+      ReactDOM.render(
+        <div>
+          {
+            names.map(function(name, index){
+              return <div key= {index}>Hello, {name}</div>
+            });
+          }  
+        </div>
+        document.getElementById('example');
       );
     </script>
   </body>

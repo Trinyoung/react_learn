@@ -10,12 +10,12 @@
   <body>
     <div id="example"></div>
     <script type="text/babel">
-      // 组件的 propTypes属性用来检查this.props的属性是否符合定义的要求。
+      // defaultProps 用于定义组件的默认属性。
       var data = 123;
 
       class MyTitle extends React.Component {
-        static propTypes = {
-          title: PropTypes.string.isRequired,
+        static defaultProps = {
+          title :'hello world'
         }
         render() {
           return <h1> {this.props.title} </h1>;
@@ -23,7 +23,7 @@
       }
 
       ReactDOM.render(
-        <MyTitle title={data} />,
+        <MyTitle/>,
         document.getElementById('example')
       );
       
